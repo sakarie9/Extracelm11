@@ -1,0 +1,15 @@
+<resources>
+<!--该文件夹下配置信息只在api21及以上使用-->
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+
+        <item name="colorPrimaryDark">@color/top</item>
+        <item name="android:statusBarColor">@color/top</item>
+        <!--告诉系统只在Android5.0以后的设备使用避免报红-->
+
+    </style>
+
+
+
+</resources>

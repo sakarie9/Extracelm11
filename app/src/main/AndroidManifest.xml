@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="extrace.ui.main"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <application
+        android:name=".ExTraceApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_icon"
+        android:label="@string/app_name"
+        android:logo="@drawable/user"
+        android:theme="@style/AppTheme"
+        android:networkSecurityConfig="@xml/network_security_config">
+        <uses-library android:name="org.apache.http.legacy" android:required="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="extrace.ui.misc.CustomerListActivity"
+            android:label="@string/title_activity_customer_list">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="extrace.ui.misc.CustomerEditActivity"
+            android:label="@string/title_activity_customer_edit">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <!-- category android:name="android.intent.category.LAUNCHER" / -->
+            </intent-filter>
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="extrace.ui.misc.CustomerListActivity" />
+        </activity>
+        <activity
+            android:name="extrace.ui.misc.RegionListActivity"
+            android:label="@string/title_activity_region_list">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <!-- category android:name="android.intent.category.LAUNCHER" / -->
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="zxing.util.CaptureActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="extrace.ui.domain.ExpressEditActivity"
+            android:label="@string/title_activity_express_edit" />
+        <activity
+            android:name=".UserInfoActivity"
+            android:label="@string/title_activity_user_info"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".UserInfoEditActivity"
+            android:label="@string/title_activity_user_info_edit"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".PackageEditActivity"
+            android:label="@string/title_activity_package_edit"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".SetActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="extrace.ui.domain.PackageInfoActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="extrace.ui.domain.PackageTransActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="extrace.ui.domain.PackageDeliverActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name="extrace.ui.domain.ExpressActivity" />
+        <activity android:name="extrace.ui.domain.PackagePaisongActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" ></activity>
+    </application>
+
+</manifest>
