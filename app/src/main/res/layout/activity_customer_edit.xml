@@ -12,9 +12,9 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="20dp"
         android:text="@string/title_name" />
 
@@ -22,7 +22,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignStart="@+id/textView1"
         android:layout_below="@+id/textView1"
         android:layout_marginTop="16dp"
         android:text="@string/title_tel_code" />
@@ -31,7 +31,7 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2"
         android:layout_below="@+id/textView2"
         android:layout_marginTop="16dp"
         android:text="@string/title_addr_code" />
@@ -42,8 +42,8 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView1"
         android:layout_alignBottom="@+id/textView1"
-        android:layout_marginLeft="16dp"
-        android:layout_toRightOf="@+id/textView1"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@+id/textView1"
         android:ems="10"
         android:inputType="text|textPersonName" >
     </EditText>
@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView2"
         android:layout_alignBottom="@+id/textView2"
-        android:layout_alignLeft="@+id/edtName"
+        android:layout_alignStart="@+id/edtName"
         android:ems="16"
         android:inputType="textPhonetic|phone" />
 
@@ -62,17 +62,17 @@
         android:id="@+id/txtRegion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3"
         android:layout_below="@+id/textView3"
         android:layout_marginTop="14dp"
-        android:layout_toLeftOf="@+id/btGetRegion" />
+        android:layout_toStartOf="@+id/btGetRegion" />
 
     <ImageButton
         android:id="@+id/btnGetRegion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/txtRegion"
-        android:layout_alignRight="@+id/edtName"
+        android:layout_alignEnd="@+id/edtName"
         android:background="#000000"
         android:src="@android:drawable/ic_menu_search" />
 
@@ -80,7 +80,7 @@
         android:id="@+id/edtAddr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/txtRegion"
+        android:layout_alignStart="@+id/txtRegion"
         android:layout_below="@+id/txtRegion"
         android:layout_marginTop="16dp"
         android:ems="16"
@@ -90,7 +90,7 @@
         android:id="@+id/edtDpt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/edtAddr"
+        android:layout_alignStart="@+id/edtAddr"
         android:layout_below="@+id/edtAddr"
         android:layout_marginTop="16dp"
         android:ems="16"
@@ -100,19 +100,19 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3"
         android:layout_below="@+id/edtDpt"
         android:layout_marginTop="16dp"
         android:text="@string/title_post_code" />
 
-    
+
     <EditText
         android:id="@+id/edtPostCode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView4"
         android:layout_alignBottom="@+id/textView4"
-        android:layout_alignLeft="@+id/edtName"
+        android:layout_alignStart="@+id/edtName"
         android:ems="16"
         android:inputType="textPhonetic|phone" />
 
