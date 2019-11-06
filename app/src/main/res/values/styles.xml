@@ -24,14 +24,14 @@
     <!-- 以上新建 -->
 
 
-    <!-- Application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+     Application theme.
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
-        <!-- ActionBar上的titel的字体颜色 -->
-        <item name="titleTextColor">@color/white</item>
-        <!-- ActionBar上Menu的字体颜色 -->
-        <item name="actionMenuTextColor">@color/white</item>
+                <item name="colorPrimary">@color/colorPrimary</item>
+                <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+                <item name="colorAccent">@color/colorAccent</item>
     </style>
+
     
      <style name="MyAppTheme" parent="AppTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
@@ -39,7 +39,7 @@
         <item name="android:backgroundStacked">#54BA42</item>
     </style>
 
-    <style name="AppTheme.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="AppTheme.NoActionBar" parent="Theme.MaterialComponents.Light.NoActionBar">
     </style>
 
 
