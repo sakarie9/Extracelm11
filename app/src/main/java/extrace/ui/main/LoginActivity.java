@@ -160,6 +160,8 @@ IDataAdapter<UserInfo> {
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
 		if (id == R.id.action_settings) {
+			Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+			startActivity(intent);
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
@@ -190,37 +192,5 @@ IDataAdapter<UserInfo> {
 			Toast.makeText(LoginActivity.this, "密码错误!", Toast.LENGTH_SHORT).show();
 		}
 	}
-
-//	@Override
-//	public List<CustomerInfo> getData() {
-//		// TODO Auto-generated method stub
-//		return mItem;
-//	}
-//
-//	@Override
-//	public void setData(List<CustomerInfo> data) {
-//		// TODO Auto-generated method stub
-//		mItem = new ArrayList<CustomerInfo>();
-//		mItem = data;
-//	}
-//
-//	@Override
-//	public void notifyDataSetChanged() {
-//		//一定要在此方法中进行数据处理
-//		int id = mItem.get(0).getID();//不为空的情况
-//		
-//		if(Integer.parseInt(userPwd) == id ) {
-//			Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-//        	startActivity(intent);
-//        	LoginActivity.this.finish();	//让用户不能通过返回键回到原页面
-//		}
-//		else {
-//			Toast.makeText(LoginActivity.this, "账号或密码错误!", Toast.LENGTH_SHORT).show();
-//			//Toast.makeText(LoginActivity.this, id+"测试二!"+mItem, Toast.LENGTH_SHORT).show();
-//			
-//			//mLoader.SaveCustomer(mItem);
-//		}
-//
-//	}
 
 }

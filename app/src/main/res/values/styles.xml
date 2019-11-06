@@ -23,23 +23,19 @@
     
     <!-- 以上新建 -->
 
-
-     Application theme.
+    
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
-                <item name="colorPrimary">@color/colorPrimary</item>
-                <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-                <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
-
     
-     <style name="MyAppTheme" parent="AppTheme">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
-         <item name="android:background">#54BA42</item>
-        <item name="android:backgroundStacked">#54BA42</item>
-    </style>
 
     <style name="AppTheme.NoActionBar" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
 
 
