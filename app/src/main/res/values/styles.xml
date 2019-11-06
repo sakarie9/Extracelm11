@@ -25,7 +25,7 @@
 
 
     <!-- Application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
         <!-- ActionBar上的titel的字体颜色 -->
         <item name="titleTextColor">@color/white</item>
@@ -39,7 +39,7 @@
         <item name="android:backgroundStacked">#54BA42</item>
     </style>
 
-    <style name="AppTheme.NoActionBar" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="AppTheme.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
     </style>
 
 

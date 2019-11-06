@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
     android:orientation="vertical"
     tools:context="extrace.ui.main.SetActivity">
 
@@ -13,42 +11,32 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:gravity="center"
-        android:background="@drawable/bg"
         android:orientation="horizontal">
 
-        <TextView
+        <Button
             android:id="@+id/user_edit_tv_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:clickable="true"
-            android:text="返回"
-            android:textColor="@color/white" />
+            android:layout_marginStart="5dp"
+            android:text="@string/back" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="信息修改"
-            android:textColor="@color/white"
+            android:text="@string/information_update"
             android:textSize="15sp" />
 
-
-        <TextView
+        <Button
             android:id="@+id/set_tv_save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:clickable="true"
-            android:text="保存"
-            android:textColor="@color/white" />
+            android:text="@string/save" />
     </LinearLayout>
     <!--顶部区域结束-->
-
-
-
 
     <!-- 垂直滚动区 -->
     <ScrollView
@@ -57,39 +45,21 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <View
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/colorLine" />
+                android:layout_height="wrap_content">
 
-            <RelativeLayout
-                style="@style/Bar.White.Selectable"
-                android:layout_marginTop="@dimen/activity_vertical_margin">
-
-                <TextView
-                    android:id="@+id/set_tv_url"
-                    android:layout_width="45dp"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="URL"/>
-
-                <EditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/set_et_url"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:textSize="15sp"
-                    android:layout_toRightOf="@+id/set_tv_url"
-                    android:background="@null"/>
-            </RelativeLayout>
+                    android:hint="@string/url"/>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/colorLine" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <RelativeLayout
                 style="@style/Bar.White.Selectable"
@@ -112,15 +82,6 @@
                     android:layout_toRightOf="@+id/package_first_icon"
                     android:background="@null"/>
             </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/colorLine" />
-
-
-
-
 
             <RelativeLayout
                 android:visibility="gone"
@@ -145,11 +106,6 @@
                     android:background="@null"/>
             </RelativeLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/colorLine" />
-
             <RelativeLayout
                 android:visibility="gone"
                 style="@style/Bar.White.Selectable">
@@ -172,16 +128,8 @@
                     android:background="@null"/>
             </RelativeLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/colorLine" />
-
-
-
-
-
         </LinearLayout>
+
     </ScrollView>
 
 

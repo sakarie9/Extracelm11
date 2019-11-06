@@ -4,9 +4,13 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textfield.TextInputEditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,8 +20,9 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class SetActivity extends AppCompatActivity {
 
-    TextView tvSave;
-    EditText etURL;
+    Button tvBack;
+    Button tvSave;
+    TextInputEditText etURL;
     private ExTraceApplication app;
     private UserInfo user;
     SharedPreferences sp;
@@ -31,9 +36,17 @@ public class SetActivity extends AppCompatActivity {
         et = sp.edit();//修改器
         app = (ExTraceApplication) getApplication();
 
-        tvSave = (TextView) findViewById(R.id.set_tv_save);
-        etURL = (EditText) findViewById(R.id.set_et_url);
+        tvBack = findViewById(R.id.user_edit_tv_back);
+        tvSave = findViewById(R.id.set_tv_save);
+        etURL = findViewById(R.id.set_et_url);
         etURL.setText(app.getServerUrl());
+
+        tvBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         tvSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
