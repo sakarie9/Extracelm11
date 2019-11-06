@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
     <!-- 下拉框-->
     <string-array name="package_status">
         <item>新建</item>
@@ -11,7 +12,7 @@
     </string-array>
 
     <string name="app_name">卓越快递</string>
-    <string name="title_section1">功能选择</string>
+    <string name="title_section1" >功能选择</string>
     <string name="title_section2">派送任务</string>
     <string name="title_section3">揽收任务</string>
     <string name="title_section4">转运任务</string>

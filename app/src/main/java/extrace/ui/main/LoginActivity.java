@@ -3,6 +3,7 @@ package extrace.ui.main;
 import android.content.SharedPreferences;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import extrace.loader.UserInfoLoader;
 import extrace.misc.model.UserInfo;
@@ -29,6 +31,7 @@ IDataAdapter<UserInfo> {
 	EditText etUserPwd;
 	Button tvUserLogin;
 	TextView tvSet;
+	Toolbar toolbar;
 	String userId;
 	String userPwd;
 	private UserInfo mItem;
@@ -52,6 +55,7 @@ IDataAdapter<UserInfo> {
 		cbLogin = (CheckBox) findViewById(R.id.checkBox_login);
 		cbPwd = (CheckBox) findViewById(R.id.checkBox_password);
 		tvSet = (TextView) findViewById(R.id.login_tv_set);
+		toolbar = findViewById(R.id.toolbar);
 		sp = getPreferences(MODE_PRIVATE);//模式:其他app是否能看到
 		et = sp.edit();//修改器
 		String rpwd = new String();	//记住密码
@@ -60,6 +64,8 @@ IDataAdapter<UserInfo> {
 		rlogin = sp.getString(RLOGIN,"F");
 
 
+		toolbar.setTitle("卓越快递");
+		toolbar.setTitleTextColor(Color.parseColor("#FFFFFF"));
 
 		app = (ExTraceApplication) getApplication();
 		String PREFS_NAME = "ExTrace.cfg";
