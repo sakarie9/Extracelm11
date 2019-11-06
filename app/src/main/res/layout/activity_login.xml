@@ -4,7 +4,6 @@
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
     android:orientation="vertical"
     tools:context="extrace.ui.main.LoginActivity">
 
@@ -38,7 +37,7 @@
                 android:id="@+id/login_et_userid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="账号"
+                android:hint="@string/username"
                 android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -53,7 +52,7 @@
                 android:id="@+id/login_et_userpwd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="密码"
+                android:hint="@string/password"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -67,14 +66,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="记住密码" />
+                android:text="@string/remember_password" />
 
             <androidx.appcompat.widget.AppCompatCheckBox
                 android:id="@+id/checkBox_login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="自动登录" />
+                android:text="@string/auto_login" />
         </LinearLayout>
 
         <com.google.android.material.button.MaterialButton
@@ -84,7 +83,7 @@
             android:layout_marginTop="24dp"
             android:layout_marginBottom="24dp"
             android:padding="12dp"
-            android:text="登录" />
+            android:text="@string/login" />
 
         <TextView
             android:id="@+id/login_tv_set"
@@ -92,7 +91,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             android:gravity="center"
-            android:text="设置"
+            android:text="@string/settings"
             android:textSize="16sp" />
     </LinearLayout>
 
