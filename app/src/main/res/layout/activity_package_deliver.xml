@@ -80,13 +80,13 @@
                 android:background="@color/colorLine"
                 android:layout_below="@+id/package_deliver_rctop"/>
 
-            <android.support.v7.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/package_deliver_rec"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/package_deliver_rcline1"
                 >
-            </android.support.v7.widget.RecyclerView>
+            </androidx.recyclerview.widget.RecyclerView>
 
         </RelativeLayout>
     </ScrollView>
