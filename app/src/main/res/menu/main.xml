@@ -3,17 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="extrace.main.ui.MainActivity" >
 
-    <item
-        android:id="@+id/action_search"
-        android:icon="@android:drawable/ic_menu_search"
-        app:showAsAction="collapseActionView|ifRoom"
-        app:actionViewClass="android.widget.SearchView"
-        android:title="@string/action_search"/>
-    <item
-        android:id="@+id/action_new"
-        android:icon="@android:drawable/ic_menu_add"
-        app:showAsAction="ifRoom"
-        android:title="@string/action_new"/>
+<!--    <item-->
+<!--        android:id="@+id/action_new"-->
+<!--        android:icon="@android:drawable/ic_menu_add"-->
+<!--        app:showAsAction="ifRoom"-->
+<!--        android:title="@string/action_new"/>-->
 
 
     <item
