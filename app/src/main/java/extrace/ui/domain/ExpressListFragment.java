@@ -63,8 +63,9 @@ public class ExpressListFragment extends ListFragment {
 
         getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE); 
         registerForContextMenu(getListView());
-        
-        RefreshList();
+
+		//TODO:测试
+        //RefreshList();
 	}
 
 	@Override
@@ -156,7 +157,8 @@ public class ExpressListFragment extends ListFragment {
 		getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 		registerForContextMenu(getListView());
 
-		RefreshList();
+		//TODO:测试
+		//RefreshList();
 
 	}
 }

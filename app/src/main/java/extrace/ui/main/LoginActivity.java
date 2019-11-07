@@ -31,7 +31,6 @@ IDataAdapter<UserInfo> {
 	EditText etUserPwd;
 	Button tvUserLogin;
 	TextView tvSet;
-	Toolbar toolbar;
 	String userId;
 	String userPwd;
 	private UserInfo mItem;
@@ -55,17 +54,12 @@ IDataAdapter<UserInfo> {
 		cbLogin = (CheckBox) findViewById(R.id.checkBox_login);
 		cbPwd = (CheckBox) findViewById(R.id.checkBox_password);
 		tvSet = (TextView) findViewById(R.id.login_tv_set);
-		toolbar = findViewById(R.id.toolbar);
 		sp = getPreferences(MODE_PRIVATE);//模式:其他app是否能看到
 		et = sp.edit();//修改器
 		String rpwd = new String();	//记住密码
 		String rlogin = new String();	//自动登录
 		rpwd = sp.getString(RPWD,"F");
 		rlogin = sp.getString(RLOGIN,"F");
-
-
-		toolbar.setTitle("卓越快递");
-		toolbar.setTitleTextColor(Color.parseColor("#FFFFFF"));
 
 		app = (ExTraceApplication) getApplication();
 		String PREFS_NAME = "ExTrace.cfg";
@@ -164,6 +158,8 @@ IDataAdapter<UserInfo> {
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
 		if (id == R.id.action_settings) {
+			Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+			startActivity(intent);
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
@@ -193,37 +189,5 @@ IDataAdapter<UserInfo> {
 			Toast.makeText(LoginActivity.this, "密码错误!", Toast.LENGTH_SHORT).show();
 		}
 	}
-
-//	@Override
-//	public List<CustomerInfo> getData() {
-//		// TODO Auto-generated method stub
-//		return mItem;
-//	}
-//
-//	@Override
-//	public void setData(List<CustomerInfo> data) {
-//		// TODO Auto-generated method stub
-//		mItem = new ArrayList<CustomerInfo>();
-//		mItem = data;
-//	}
-//
-//	@Override
-//	public void notifyDataSetChanged() {
-//		//一定要在此方法中进行数据处理
-//		int id = mItem.get(0).getID();//不为空的情况
-//		
-//		if(Integer.parseInt(userPwd) == id ) {
-//			Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-//        	startActivity(intent);
-//        	LoginActivity.this.finish();	//让用户不能通过返回键回到原页面
-//		}
-//		else {
-//			Toast.makeText(LoginActivity.this, "账号或密码错误!", Toast.LENGTH_SHORT).show();
-//			//Toast.makeText(LoginActivity.this, id+"测试二!"+mItem, Toast.LENGTH_SHORT).show();
-//			
-//			//mLoader.SaveCustomer(mItem);
-//		}
-//
-//	}
 
 }

@@ -44,7 +44,8 @@ public class CustomerListActivity extends AppCompatActivity {
 	
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		list_fg.onActivityResult(requestCode,resultCode,data);
+		super.onActivityResult(requestCode, resultCode, data);
+		list_fg.onActivityResult(requestCode, resultCode, data);
 	}
 
 	/**
