@@ -1,12 +1,10 @@
 package extrace.ui.domain;
 
 import android.content.Intent;
-import android.content.pm.PackageInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -17,7 +15,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import extrace.loader.TransPackageLoader;
 import extrace.misc.model.TransPackage;
 import extrace.net.MyDataAdapter;
-import extrace.ui.main.PackageEditActivity;
 import extrace.ui.main.R;
 import extrace.ui.misc.RegionListActivity;
 
@@ -51,7 +48,7 @@ public class PackageInfoActivity extends AppCompatActivity implements MyDataAdap
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_package_info);
         findId();
-        setLisenter();
+        setListener();
         Intent intent = getIntent();
         pid = intent.getStringExtra("packageId");
         tvId.setText(pid);
@@ -87,7 +84,7 @@ public class PackageInfoActivity extends AppCompatActivity implements MyDataAdap
 
     }
 
-    private void setLisenter(){
+    private void setListener(){
 
         tvSave.setOnClickListener(new View.OnClickListener() {
             @Override

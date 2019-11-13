@@ -13,7 +13,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-
         android:gravity="center"
         android:background="@drawable/bg"
         android:orientation="horizontal">
@@ -57,39 +56,26 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
             android:orientation="vertical">
 
-            <View
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/colorLine" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp">
 
-            <RelativeLayout
-                style="@style/Bar.White"
-                android:layout_marginTop="@dimen/activity_vertical_margin">
-
-                <TextView
-                    android:id="@+id/package_info_idtext"
-                    android:layout_width="90dp"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="包裹号"/>
-
-                <TextView
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/package_info_tv_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:textSize="15sp"
-                    android:layout_toRightOf="@+id/package_info_idtext"
-                    android:background="@null"/>
-            </RelativeLayout>
+                    android:hint="@string/package_number"
+                    android:textSize="15sp"/>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/colorLine" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <RelativeLayout
                 style="@style/Bar.White">
@@ -120,12 +106,6 @@
                     />
             </RelativeLayout>
 
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/colorLine" />
-
             <RelativeLayout
                 style="@style/Bar.White"
                 android:layout_marginTop="@dimen/activity_vertical_margin">
@@ -155,11 +135,6 @@
                     android:layout_marginRight="10dp"
                     android:src="@drawable/search"/>
             </RelativeLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/colorLine" />
-
 
             <RelativeLayout
                 style="@style/Bar.White"
@@ -192,13 +167,6 @@
                     android:src="@drawable/search"/>
             </RelativeLayout>
 
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/colorLine" />
-
-
             <RelativeLayout
                 style="@style/Bar.White">
 
@@ -221,6 +189,7 @@
             </RelativeLayout>
 
         </LinearLayout>
+
     </ScrollView>
 
 

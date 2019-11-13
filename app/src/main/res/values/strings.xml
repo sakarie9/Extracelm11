@@ -176,5 +176,7 @@
     <string name="save">Save</string>
     <string name="information_update">Information Update</string>
     <string name="url">URL</string>
+    <string name="region">Region</string>
+    <string name="package_number">Package Number</string>
 
 </resources>

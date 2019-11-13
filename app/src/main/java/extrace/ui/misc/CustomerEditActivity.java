@@ -43,12 +43,12 @@ public class CustomerEditActivity extends AppCompatActivity implements
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_customer_edit);
 
-		mNameView = (EditText) findViewById(R.id.edtName);
-		mTelCodeView = (EditText) findViewById(R.id.edtTelCode);
-		mAddrView = (EditText) findViewById(R.id.edtAddr);
-		mDptView = (EditText) findViewById(R.id.edtDpt);
-		mPostCodeView = (EditText) findViewById(R.id.edtPostCode);
-		mRegionView = (TextView) findViewById(R.id.txtRegion);
+		mNameView = findViewById(R.id.edtName);
+		mTelCodeView = findViewById(R.id.edtTelCode);
+		mAddrView = findViewById(R.id.edtAddr);
+		mDptView = findViewById(R.id.edtDpt);
+		mPostCodeView = findViewById(R.id.edtPostCode);
+		mRegionView = findViewById(R.id.txtRegion);
 
 		findViewById(R.id.btnGetRegion).setOnClickListener(
 				new View.OnClickListener() {

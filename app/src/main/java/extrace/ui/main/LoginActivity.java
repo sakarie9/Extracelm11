@@ -82,7 +82,7 @@ IDataAdapter<UserInfo> {
 			
 			@Override
 			public void onClick(View v) {		//登录监听
-	
+
 				userId = etUserId.getText().toString();
 				userPwd = etUserPwd.getText().toString();
 				mLoader = new UserInfoLoader(LoginActivity.this, LoginActivity.this);
@@ -93,8 +93,6 @@ IDataAdapter<UserInfo> {
 				et.putString(EID,etUserId.getText().toString());
 				et.putString(EPWD,etUserPwd.getText().toString());
 				et.commit();			//每次登陆重新在内存中写入密码
-
-
 			}
 		});
 
@@ -182,7 +180,6 @@ IDataAdapter<UserInfo> {
 	public void notifyDataSetChanged() {		
 		//一定要在此方法中进行数据处理
 		String pwd = mItem.getPWD();//不为空的情况
-		
 		if(userPwd.equals(pwd)) {
 			Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         	startActivity(intent);
