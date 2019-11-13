@@ -2,6 +2,9 @@ package extrace.ui.misc;
 
 import java.util.regex.Pattern;
 
+import android.app.Dialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -11,8 +14,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import androidx.fragment.app.DialogFragment;
 import extrace.loader.CustomerEditLoader;
 import extrace.misc.model.CustomerInfo;
 import extrace.net.IDataAdapter;
@@ -41,6 +46,9 @@ public class CustomerEditActivity extends AppCompatActivity implements
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		if(this.getSupportActionBar() != null){
+			this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		}
 		setContentView(R.layout.activity_customer_edit);
 
 		mNameView = findViewById(R.id.edtName);
@@ -85,12 +93,6 @@ public class CustomerEditActivity extends AppCompatActivity implements
 	}
 
 	@Override
-	protected void onStart() {
-		super.onStart();
-		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-	}
-
-	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		super.onCreateOptionsMenu(menu);
 		getMenuInflater().inflate(R.menu.customer_edit, menu);
@@ -110,17 +112,19 @@ public class CustomerEditActivity extends AppCompatActivity implements
 			}
 			return true;
 		case (android.R.id.home):
-	        /*将选中的对象赋值给Intent*/ 
-//	        Bundle bundle = new Bundle();  
-//	        bundle.putSerializable("CustomerInfo",mItem); 
-//			mIntent.putExtras(bundle);  
-
-	        mIntent.putExtra("CustomerInfo",mItem);  
-			this.setResult(RESULT_OK, mIntent);
-			this.finish();
-//			Intent intent = new Intent(this, CustomerListActivity.class);
-//			intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//			startActivity(intent);
+			new AlertDialog.Builder(this)
+					.setMessage(R.string.contents_not_saved)
+					.setPositiveButton(R.string.save, new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog, int id) {
+							Save();
+						}
+					})
+					.setNegativeButton(R.string.exit, new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog, int id) {
+							finish();
+						}
+					})
+					.show();
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
@@ -150,21 +154,22 @@ public class CustomerEditActivity extends AppCompatActivity implements
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
 		switch (resultCode) {
-		case RESULT_OK:
-			String regionId,regionString;
-			if (data.hasExtra("RegionId")) {
-				regionId = data.getStringExtra("RegionId");
-				regionString = data.getStringExtra("RegionString");
-			} else {
-				regionId = "";
-				regionString = "";
-			}
-			mRegionView.setTag(regionId);
-			mRegionView.setText(regionString);
-			break;
-		default:
-			break;
+			case RESULT_OK:
+				String regionId, regionString;
+				if (data.hasExtra("RegionId")) {
+					regionId = data.getStringExtra("RegionId");
+					regionString = data.getStringExtra("RegionString");
+				} else {
+					regionId = "";
+					regionString = "";
+				}
+				mRegionView.setTag(regionId);
+				mRegionView.setText(regionString);
+				break;
+			default:
+				break;
 		}
 	}
 
@@ -194,36 +199,24 @@ public class CustomerEditActivity extends AppCompatActivity implements
 
 	private void Save() {
 		mLoader = new CustomerEditLoader(this, this);
-//		mItem = new CustomerInfo();
-//		try {
-//			mItem.setID(mTelCodeView.getText().toString());
-//		} catch (Exception e) {
-//			Toast.makeText(this, "客户电话号码不能为空!", Toast.LENGTH_SHORT).show();
-//		}
 		try {
 			mItem.setName(mNameView.getText().toString());
 		} catch (Exception e) {
-			Toast.makeText(this, "客户姓名不能为空!", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, R.string.error_name_null, Toast.LENGTH_SHORT).show();
 			return;
 		}
 	    if(mItem.getName().length() < 2)
 	    {
-			Toast.makeText(this, "客户姓名不能太短!", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, R.string.error_name_short, Toast.LENGTH_SHORT).show();
 			return;
 	    }
 		
 		try {
 			mItem.setTelCode(mTelCodeView.getText().toString());
 		} catch (Exception e) {
-			Toast.makeText(this, "客户电话号码不能为空!", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, R.string.error_phone_null, Toast.LENGTH_SHORT).show();
 			return;
 		}
-		
-	    if(mItem.getTelCode().length() < 6)
-	    {
-			Toast.makeText(this, "客户电话号码不能太短!", Toast.LENGTH_SHORT).show();
-			return;
-	    }
 
 		String regex_mb = "(\\+\\d+)?1[34578]\\d{9}$";  //移动电话的正则表达式
         String regex_ph = "(\\+\\d+)?(\\d{3,4}\\-?)?\\d{7,8}$";  //固定电话的正则表达式
@@ -231,14 +224,14 @@ public class CustomerEditActivity extends AppCompatActivity implements
 	    Pattern pattern_ph = Pattern.compile(regex_ph); 
 	    if(!(pattern_mb.matcher(mItem.getTelCode()).matches() || pattern_ph.matcher(mItem.getTelCode()).matches()))
 	    {
-			Toast.makeText(this, "客户电话号码格式错误!", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, R.string.error_phone_format, Toast.LENGTH_SHORT).show();
 			return;
 	    }
 
 	    try {
 			mItem.setAddress(mAddrView.getText().toString());
 		} catch (Exception e) {
-			Toast.makeText(this, "客户地址不能为空!", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, R.string.error_address_null, Toast.LENGTH_SHORT).show();
 			return;
 		}
 		try {
@@ -255,9 +248,11 @@ public class CustomerEditActivity extends AppCompatActivity implements
 			mItem.setRegionCode(mRegionView.getTag().toString());
 			mItem.setRegionString(mRegionView.getText().toString());
 		} catch (Exception e) {
-			Toast.makeText(this, "客户地址行政区不能为空!", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this,R.string.error_region_null, Toast.LENGTH_SHORT).show();
 			return;
 		}
 		mLoader.SaveCustomer(mItem);
+		this.finish();
 	}
+
 }

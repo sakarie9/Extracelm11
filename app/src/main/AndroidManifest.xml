@@ -72,30 +72,30 @@
         <activity
             android:name=".UserInfoActivity"
             android:label="@string/title_activity_user_info"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".UserInfoEditActivity"
             android:label="@string/title_activity_user_info_edit"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".PackageEditActivity"
             android:label="@string/title_activity_package_edit"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".SetActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme" />
         <activity
             android:name="extrace.ui.domain.PackageInfoActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme" />
         <activity
             android:name="extrace.ui.domain.PackageTransActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme" />
         <activity
             android:name="extrace.ui.domain.PackageDeliverActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme" />
         <activity android:name="extrace.ui.domain.ExpressActivity" />
         <activity android:name="extrace.ui.domain.PackagePaisongActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>
