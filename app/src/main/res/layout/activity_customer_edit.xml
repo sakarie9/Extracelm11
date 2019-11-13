@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -6,114 +6,106 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="extrace.ui.misc.CustomerEditActivity" >
+    android:orientation="vertical"
+    tools:context="extrace.ui.misc.CustomerEditActivity$PlaceholderFragment" >
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/title_name" />
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textView1"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="16dp"
-        android:text="@string/title_tel_code" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/title_name"
+            android:inputType="text|textPersonName" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textView2"
-        android:layout_below="@+id/textView2"
-        android:layout_marginTop="16dp"
-        android:text="@string/title_addr_code" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/edtName"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView1"
-        android:layout_alignBottom="@+id/textView1"
-        android:layout_marginStart="16dp"
-        android:layout_toEndOf="@+id/textView1"
-        android:ems="10"
-        android:inputType="text|textPersonName" >
-    </EditText>
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp">
 
-    <EditText
-        android:id="@+id/edtTelCode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView2"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_alignStart="@+id/edtName"
-        android:ems="16"
-        android:inputType="textPhonetic|phone" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtTelCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/title_tel_code"
+            android:inputType="textPhonetic|phone"  />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <TextView
         android:id="@+id/txtRegion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textView3"
-        android:layout_below="@+id/textView3"
-        android:layout_marginTop="14dp"
-        android:layout_toStartOf="@+id/btGetRegion" />
+        android:layout_marginTop="14dp" />
 
     <ImageButton
         android:id="@+id/btnGetRegion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/txtRegion"
-        android:layout_alignEnd="@+id/edtName"
+
         android:background="#000000"
         android:src="@android:drawable/ic_menu_search" />
 
-    <EditText
-        android:id="@+id/edtAddr"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/txtRegion"
-        android:layout_below="@+id/txtRegion"
-        android:layout_marginTop="16dp"
-        android:ems="16"
-        android:inputType="textPostalAddress" />
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp">
 
-    <EditText
-        android:id="@+id/edtDpt"
-        android:layout_width="wrap_content"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtAddr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="16"
+            android:hint="@string/title_addr_code"
+            android:inputType="textPostalAddress" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/edtAddr"
-        android:layout_below="@+id/edtAddr"
-        android:layout_marginTop="16dp"
-        android:ems="16"
-        android:inputType="textPostalAddress" />
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp">
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtDpt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="16"
+            android:inputType="textPostalAddress" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textView3"
-        android:layout_below="@+id/edtDpt"
-        android:layout_marginTop="16dp"
-        android:text="@string/title_post_code" />
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtPostCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="16"
+            android:hint="@string/title_post_code"
+            android:inputType="textPhonetic|phone"  />
 
-    <EditText
-        android:id="@+id/edtPostCode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView4"
-        android:layout_alignBottom="@+id/textView4"
-        android:layout_alignStart="@+id/edtName"
-        android:ems="16"
-        android:inputType="textPhonetic|phone" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-</RelativeLayout>
+</LinearLayout>

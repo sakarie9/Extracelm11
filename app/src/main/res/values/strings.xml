@@ -178,5 +178,15 @@
     <string name="url">URL</string>
     <string name="region">Region</string>
     <string name="package_number">Package Number</string>
+    <string name="package_info">Package Info</string>
+    <string name="contents_not_saved">The information you typed has\'t been saved.</string>
+    <string name="exit">Exit</string>
+    <string name="error_name_null">Name can\'t be null!</string>
+    <string name="error_name_short">Name is too short!</string>
+    <string name="error_phone_null">Phone number can\'t be null!</string>
+    <string name="error_phone_short">Phone number is too short!</string>
+    <string name="error_phone_format">Incorrect phone number format!</string>
+    <string name="error_address_null">Address can\'t be null!</string>
+    <string name="error_region_null">Region can\'t be null!</string>
 
 </resources>

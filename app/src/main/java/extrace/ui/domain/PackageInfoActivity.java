@@ -2,6 +2,9 @@ package extrace.ui.domain;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -10,6 +13,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import extrace.loader.TransPackageLoader;
@@ -46,7 +50,12 @@ public class PackageInfoActivity extends AppCompatActivity implements MyDataAdap
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.setTitle(R.string.package_info);
+        if(this.getSupportActionBar() != null){
+            this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
         setContentView(R.layout.activity_package_info);
+
         findId();
         setListener();
         Intent intent = getIntent();
@@ -139,9 +148,10 @@ public class PackageInfoActivity extends AppCompatActivity implements MyDataAdap
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {     //回调
+        super.onActivityResult(requestCode, resultCode, data);
         switch (resultCode) {
             case RESULT_OK:
-                String regionId,regionString;
+                String regionId, regionString;
                 if (data.hasExtra("RegionId")) {
                     regionId = data.getStringExtra("RegionId");
                     regionString = data.getStringExtra("RegionString");
@@ -150,17 +160,17 @@ public class PackageInfoActivity extends AppCompatActivity implements MyDataAdap
                     regionString = "";
                 }
 
-                if(LOCATIONTYPE == 0){          //设置源网点
+                if (LOCATIONTYPE == 0) {          //设置源网点
                     tvSource.setTag(regionId);
                     sourceId = regionId;
                     tvSource.setText(regionString);
-                }else if(LOCATIONTYPE == 1){    //设置目标网点
+                } else if (LOCATIONTYPE == 1) {    //设置目标网点
                     tvTarget.setTag(regionId);
                     targetId = regionId;
                     tvTarget.setText(regionString);
                 }
 
-                Toast.makeText(this, regionId+"id号", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, regionId + "id号", Toast.LENGTH_SHORT).show();
 
                 break;
             default:
@@ -217,5 +227,33 @@ public class PackageInfoActivity extends AppCompatActivity implements MyDataAdap
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.menu_confirm,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:
+                finish();
+                return true;
+            case R.id.menu_confirm_button:
+                transPackage.setSourceNode(sourceId);
+                transPackage.setTargetNode(targetId);
+
+                Toast.makeText(PackageInfoActivity.this, transPackage+"id号", Toast.LENGTH_SHORT).show();
+
+                mLoader = new TransPackageLoader(PackageInfoActivity.this,PackageInfoActivity.this);
+                mLoader.Save(transPackage);
+                finish();
+                return true;
+                default:
+                    return super.onOptionsItemSelected(item);
+        }
     }
 }
