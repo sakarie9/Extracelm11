@@ -65,7 +65,7 @@ public class ExpressListFragment extends ListFragment {
         registerForContextMenu(getListView());
 
 		//TODO:测试
-        //RefreshList();
+        RefreshList();
 	}
 
 	@Override
@@ -158,7 +158,7 @@ public class ExpressListFragment extends ListFragment {
 		registerForContextMenu(getListView());
 
 		//TODO:测试
-		//RefreshList();
+		RefreshList();
 
 	}
 }

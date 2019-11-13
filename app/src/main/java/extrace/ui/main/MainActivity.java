@@ -41,11 +41,11 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         final ActionBar actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         
-        Resources r = getResources();                     //背景
-        Drawable myDrawable = r.getDrawable(R.drawable.bg,getApplicationContext().getTheme());
-        Drawable myDrawable2 = r.getDrawable(R.drawable.bg,getApplicationContext().getTheme());
-        actionBar.setBackgroundDrawable(myDrawable2);      //actonBar背景
-        actionBar.setStackedBackgroundDrawable(myDrawable);//tab栏背景
+        //Resources r = getResources();                     //背景
+        //Drawable myDrawable = r.getDrawable(R.drawable.bg,getApplicationContext().getTheme());
+        //Drawable myDrawable2 = r.getDrawable(R.drawable.bg,getApplicationContext().getTheme());
+        //actionBar.setBackgroundDrawable(myDrawable2);      //actonBar背景
+        //actionBar.setStackedBackgroundDrawable(myDrawable);//tab栏背景
 
 
 

@@ -3,8 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/colorBackground"
-    tools:context="extrace.ui.main.ExpressEditActivity$ExpressEditFragment2" >
+    android:background="@color/colorBackground">
 
     <!-- 垂直滚动区 -->
     <ScrollView
