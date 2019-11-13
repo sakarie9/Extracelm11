@@ -143,8 +143,6 @@
             android:layout_marginRight="10dp"
             android:background="@color/colorWhite"></ListView>
 
-
-
         <RelativeLayout
             android:id="@+id/package_paisong_rl"
             android:layout_width="match_parent"
