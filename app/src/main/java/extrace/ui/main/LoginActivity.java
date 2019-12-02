@@ -110,7 +110,6 @@ IDataAdapter<UserInfo> {
 					et.putString(EPWD,etUserPwd.getText().toString());
 					et.commit();//将缓存区里面的操作写入文件
 
-
                 }else{
 					et.putString(RPWD,"F");//存入键值对
 					et.commit();//将缓存区里面的操作写入文件
