@@ -6,38 +6,6 @@
     android:orientation="vertical"
     tools:context="extrace.ui.main.SetActivity">
 
-    <!--上部分-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/user_edit_tv_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:text="@string/back" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/information_update"
-            android:textSize="15sp" />
-
-        <Button
-            android:id="@+id/set_tv_save"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:text="@string/save" />
-    </LinearLayout>
-    <!--顶部区域结束-->
-
     <!-- 垂直滚动区 -->
     <ScrollView
         android:layout_width="match_parent"

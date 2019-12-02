@@ -24,8 +24,6 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class SetActivity extends AppCompatActivity {
 
-    Button tvBack;
-    Button tvSave;
     TextInputEditText etURL;
     private ExTraceApplication app;
     private UserInfo user;
@@ -44,28 +42,8 @@ public class SetActivity extends AppCompatActivity {
         et = sp.edit();//修改器
         app = (ExTraceApplication) getApplication();
 
-        tvBack = findViewById(R.id.user_edit_tv_back);
-        tvSave = findViewById(R.id.set_tv_save);
         etURL = findViewById(R.id.set_et_url);
         etURL.setText(app.getServerUrl());
-
-        tvBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
-        tvSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                String URL = etURL.getText().toString();
-                app.setServerUrl(URL);
-                Toast.makeText(SetActivity.this, "修改成功", Toast.LENGTH_SHORT).show();
-                //onKeyDown(KeyEvent.KEYCODE_BACK, null);         //返回
-                onBackPressed();        //返回
-            }
-        });
     }
 
     @Override
